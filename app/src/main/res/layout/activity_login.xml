@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="loginBody"
+            type="br.com.smartcitizen.smartmessage.model.LoginBody" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="@string/login"
+                android:textColor="@color/green"
+                android:textSize="@dimen/headerTextSize"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner"
+                    android:hint="@string/login_telefone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:text="@={loginBody.usuario_telefone}"
+                    android:textSize="@dimen/newsMoreTextSize" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:background="#FFFFFF"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/green">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:background="@drawable/round_corner_toggle"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:text="@={loginBody.usuario_senha}"
+                    android:textSize="@dimen/newsMoreTextSize" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                style="@style/loginButton"
+                app:backgroundTint="@null"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="@string/login_button" />
+
+            <ProgressBar
+                android:id="@+id/spinner"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="4dp"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

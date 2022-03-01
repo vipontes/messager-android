@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SmartMessage</string>
+
+    <string name="login">Credenciais</string>
+    <string name="login_button">Entrar</string>
+    <string name="login_password_hint">Senha</string>
+    <string name="login_telefone">Telefone</string>
+
+    <string name="token_not_found">Token não encontrado</string>
+    <string name="phone_error">Telefone inválido</string>
+    <string name="password_error">Senha inválida</string>
+    <string name="internal_error">Ocorreu um erro ao autenticar o usuário. Tente mais tarde.</string>
+    <string name="unauthorized">Nao foi possível autenticar o usuário. Verifique os dados informados.</string>
+
+    <string name="input_placeholder">Digite aqui...</string>
+
+    <string name="are_you_sure">Confirma?</string>
+    <string name="delete">DELETE</string>
+</resources>
