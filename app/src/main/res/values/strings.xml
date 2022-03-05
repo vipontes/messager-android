@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mess</string>
 
-    <string name="login">Credenciais</string>
+    <string name="login">Start the mess...</string>
     <string name="login_button">Entrar</string>
     <string name="login_password_hint">Senha</string>
     <string name="login_telefone">Telefone</string>

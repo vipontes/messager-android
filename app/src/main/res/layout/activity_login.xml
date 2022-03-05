@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 android:text="@string/login"
-                android:textColor="@color/green"
+                android:textColor="@color/primaryColor"
                 android:textSize="@dimen/headerTextSize"
                 android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 android:background="#FFFFFF"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/green">
+                app:passwordToggleTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
