@@ -1,6 +1,10 @@
 package easify.mess.viewmodel
 
 import android.app.Application
+import android.content.Context
+import android.os.Build
+import android.os.VibrationEffect
+import android.os.Vibrator
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import easify.mess.MainApplication
@@ -49,6 +53,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application), I
         userData.value = user!!
     }
 
+    @Suppress("DEPRECATION")
     private fun initSocket(user: User?) {
         user?.let { usr ->
             SocketHandler.initSocket(usr)
@@ -84,6 +89,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application), I
                         }
 
                         userList.postValue(list)
+                    }
+
+                    val app = getApplication() as MainApplication
+                    val vibrator = app.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                    if (Build.VERSION.SDK_INT >= 26) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(200)
                     }
                 }
             }
