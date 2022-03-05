@@ -11,8 +11,8 @@ class MessageService (application: Application) {
     private val api = RetrofitBuilder(application).retrofitAuth()
         .create(IMessage::class.java)
 
-    fun getMessagesByUserId(userId: Long): Single<MutableList<Message>> {
-        return api.getMessagesByUserId(userId)
+    fun getMessagesByUserId(fromUser: Long, toUser: Long): Single<MutableList<Message>> {
+        return api.getMessagesByUserId(fromUser, toUser)
     }
 
     fun postMessage(message: Message): Single<Message> {

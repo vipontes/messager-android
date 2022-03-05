@@ -117,7 +117,6 @@ class MessageActivity : AppCompatActivity(), MessageAdapter.OnItemClick {
         viewModel.message.observe(this, messageObserver)
         viewModel.messages.observe(this, messagesObserver)
         viewModel.toastMessage.observe(this, toastMessageObserver)
-        viewModel.loadChat()
     }
 
     override fun onSupportNavigateUp(): Boolean {

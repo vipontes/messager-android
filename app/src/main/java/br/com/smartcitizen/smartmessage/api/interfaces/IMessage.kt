@@ -8,8 +8,11 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface IMessage {
-    @GET("message/by-user/{userId}")
-    fun getMessagesByUserId(@Path("userId") userId: Long): Single<MutableList<Message>>
+    @GET("message/by-user/{fromUser}/{toUser}")
+    fun getMessagesByUserId(
+        @Path("fromUser") fromUser: Long,
+        @Path("toUser") toUser: Long
+    ): Single<MutableList<Message>>
 
     @POST("message")
     fun postMessage(@Body data: Message): Single<Message>

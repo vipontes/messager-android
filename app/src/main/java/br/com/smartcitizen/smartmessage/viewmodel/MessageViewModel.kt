@@ -44,7 +44,6 @@ class MessageViewModel(application: Application) : AndroidViewModel(application)
         getLoggedUser()
         message.value = user.value?.usuario_id?.let { Message(0, it, 0, "", "") }
 
-
         socket.on("private message") { args ->
             args[0].let {
                 val obj = it as JSONObject
@@ -129,14 +128,16 @@ class MessageViewModel(application: Application) : AndroidViewModel(application)
     fun setToUser(to: User) {
         message.value?.let {
             message.value!!.usuario_receptor_id = to.usuario_id!!
+            loadChat()
         }
     }
 
     fun loadChat() {
-        val userId = user.value?.usuario_id
-        userId?.let { id ->
+        val fromUser = user.value?.usuario_id
+        val toUser = message.value!!.usuario_receptor_id
+        fromUser?.let { id ->
             disposable.add(
-                messageService.getMessagesByUserId(id)
+                messageService.getMessagesByUserId(fromUser, toUser)
                     .subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeWith(object : DisposableSingleObserver<MutableList<Message>>() {
