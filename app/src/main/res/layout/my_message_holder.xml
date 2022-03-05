@@ -4,7 +4,7 @@
     <data>
         <variable
             name="chatMessage"
-            type="br.com.smartcitizen.smartmessage.model.Message" />
+            type="easify.mess.model.Message" />
     </data>
 
     <RelativeLayout

@@ -6,7 +6,7 @@
 
         <variable
             name="user"
-            type="br.com.smartcitizen.smartmessage.model.User" />
+            type="easify.mess.model.User" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartMessage</string>
+    <string name="app_name">Mess</string>
 
     <string name="login">Credenciais</string>
     <string name="login_button">Entrar</string>

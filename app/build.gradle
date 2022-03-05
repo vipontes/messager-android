@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "br.com.smartcitizen.smartmessage"
+        applicationId "easify.mess"
         minSdk 23
         targetSdk 31
         versionCode 1
